@@ -1,0 +1,223 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(ellipse at top left, #0b0b0b, #000);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Layout Containers */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height: 100vh;
+    padding: 10px;
+    background-image: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+}
+
+/* Header Section */
+#header, table:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #330033, #000);
+    padding: 15px 20px;
+    border-bottom: 2px solid #550055;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#buttons input[type="submit"],
+input[type="submit"] {
+    background: linear-gradient(to right, #ff0066, #cc00cc, #6600ff);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#buttons input[type="submit"]:hover {
+    background: linear-gradient(to right, #ff6699, #cc66ff);
+    transform: scale(1.05);
+}
+
+/* Status Indicator */
+#status-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    border: 2px solid #ffcccc;
+}
+
+/* Connection Code Boxes */
+textarea {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    border: 2px solid #ff66ff;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    color: #fff;
+    outline: none;
+    margin: 5px 0;
+}
+
+textarea:focus {
+    border-color: #ff3399;
+    background-color: #2a2a2a;
+}
+
+/* Chat Box */
+#chat-box {
+    background-color: #0a0a0a;
+    border: 2px solid #660099;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+    height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #cc00cc #000;
+}
+
+#chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-box::-webkit-scrollbar-track {
+    background: #111;
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ff00cc, #6600ff);
+    border-radius: 10px;
+}
+
+/* Message Input Section */
+#message-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #9933ff;
+    background-color: #111;
+    color: white;
+    font-size: 1rem;
+}
+
+#send-button,
+input[value="Send"] {
+    background: linear-gradient(to right, #ff3399, #cc00ff);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#send-button:hover,
+input[value="Send"]:hover {
+    background: linear-gradient(to right, #ff66cc, #9966ff);
+    transform: scale(1.05);
+}
+
+/* Titles & Texts */
+h2, h3, p {
+    color: #ffcce6;
+    text-shadow: 1px 1px 1px #000;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffccff;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Connection Box Section */
+table {
+    width: 100%;
+    margin: 10px 0;
+    background-color: #111;
+    border: 2px solid #331144;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+/* Footer & Effects Section */
+footer, .effects {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    color: #ffeeff;
+    font-size: 1rem;
+    margin-top: 30px;
+    border-top: 1px solid #552255;
+}
+
+/* Responsive Mobile Tweaks */
+@media (max-width: 768px) {
+    #header, table, td, textarea, #message-input {
+        font-size: 1rem;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    #chat-box {
+        height: 250px;
+    }
+
+    input[type="submit"], #send-button {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Future Firefly Placeholder */
+.firefly {
+    position: absolute;
+    background: radial-gradient(circle, #ffff00 0%, rgba(255, 255, 0, 0) 80%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: float 4s infinite ease-in-out alternate;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0px) translateX(0px);
+    }
+    to {
+        transform: translateY(-50px) translateX(30px);
+    }
+}
